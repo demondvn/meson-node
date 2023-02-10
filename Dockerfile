@@ -1,6 +1,6 @@
 FROM ubuntu
 CMD ["bash"]
-LABEL MonPham
+LABEL An=Make by MonPham
 RUN /bin/sh -c apt update && apt install -y wget tar  ca-certificates
 RUN /bin/sh -c useradd -ms /bin/bash meson &&     usermod -aG sudo meson # buildkit
 RUN /bin/sh -c echo '%sudo ALL=(ALL) NOPASSWD:ALL' >> /etc/sudoers # buildkit

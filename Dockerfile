@@ -8,5 +8,5 @@ RUN mkdir /etc/init/ && touch /etc/init/meson_cdn.conf
 ARG TOKEN
 RUN ./meson_cdn config set --token=$TOKEN --https_port=443 --cache.size=30
 CMD ./service install meson_cdn
-ENTRYPOINT ['./service','start','meson_cdn']
+CMD ./service start meson_cdn
 # ./service start meson_cdn

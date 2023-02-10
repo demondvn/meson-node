@@ -1,8 +1,8 @@
 FROM ubuntu
 CMD ["bash"]
-RUN /bin/sh -c apt update && apt install -y wget tar  ca-certificates
-RUN /bin/sh -c useradd -ms /bin/bash meson &&     usermod -aG sudo meson # buildkit
-RUN /bin/sh -c echo '%sudo ALL=(ALL) NOPASSWD:ALL' >> /etc/sudoers # buildkit
+RUN apt update && apt install -y wget tar  ca-certificates
+RUN useradd -ms /bin/bash meson &&     usermod -aG sudo meson # buildkit
+RUN echo '%sudo ALL=(ALL) NOPASSWD:ALL' >> /etc/sudoers # buildkit
 USER meson
 WORKDIR /meson
 COPY install.sh install.sh # buildkit
@@ -12,6 +12,6 @@ ARG TOKEN
 # COPY install.sh install.sh
 # COPY start.sh start.sh
 # RUN bash install.sh
-RUN /bin/sh -c sudo chmod 777 ./install.sh # buildkit
+RUN sudo chmod 777 ./install.sh # buildkit
 CMD ["/bin/sh" "-c" "./install.sh ; sleep infinity"]
 # ./service start meson_cdn

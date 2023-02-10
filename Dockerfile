@@ -10,6 +10,6 @@ COPY install.sh install.sh
 # RUN cp -r ./meson_cdn-linux-amd64/* . && rm -rf meson_cdn-linux-amd64
 ARG TOKEN
 RUN chmod +x ./install.sh 
-USER meson
+# USER meson
 CMD /bin/sh -c ./install.sh && sleep infinity
 # ./service start meson_cdn

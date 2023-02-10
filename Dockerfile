@@ -11,5 +11,5 @@ COPY install.sh install.sh
 ARG TOKEN
 RUN chmod +x ./install.sh 
 USER meson
-CMD ["/bin/sh" "-c" "./install.sh ; sleep infinity"]
+CMD ["bash" "-c" "./install.sh ; sleep infinity"]
 # ./service start meson_cdn

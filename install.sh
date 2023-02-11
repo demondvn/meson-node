@@ -9,7 +9,7 @@ cd meson_cdn-* && ls
 #  ./service install meson_cdn
 #  ./service status meson_cdn 
 
-./meson_cdn config set --token=$TOKEN --https_port=443 --cache.size=30
+./meson_cdn config set --token=$TOKEN --https_port=$PORT --cache.size=30
 ./meson_cdn
 #  ./service restart meson_cdn 
 #  ./service status meson_cdn  
